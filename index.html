@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Руслан & Анжелика — приглашение на свадьбу</title>
+<meta name="description" content="Мы женимся! 28 ноября 2026. Приглашаем вас разделить радость особенного для нас события.">
+<meta name="theme-color" content="#2a0a12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Руслан & Анжелика — мы женимся!">
+<meta property="og:description" content="28 ноября 2026 · Семь Звезд · Приглашаем вас на нашу свадьбу">
+<meta property="og:image" content="photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Marck+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine-deep:#240810; --wine:#3d0f1c; --wine-2:#5a1a2b; --rose:#b97a84; --blush:#d9b4b4;
+  --cream:#f4ede6; --paper:#efe6dc; --ink:#2b1a1d; --soft:#7b6468; --gold:#c9a98a;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --script:'Marck Script','Cormorant Garamond',cursive;
+  --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--wine-deep);color:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:520px;margin:0 auto;position:relative;background:var(--wine-deep)}
+.eyebrow{font-family:var(--sans);font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;font-weight:400;opacity:.8}
+h2{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:.14em;text-transform:uppercase;line-height:1.25;margin:14px 0 10px}
+.script{font-family:var(--script);font-weight:400}
+p.lead{font-size:19px;line-height:1.6;opacity:.9}
+.line{width:56px;height:1px;background:currentColor;opacity:.5;margin:24px auto}
+
+/* sections */
+.sec{position:relative;padding:70px 30px 90px;text-align:center}
+.dark{background:radial-gradient(120% 60% at 50% 0%,var(--wine-2),var(--wine) 55%,var(--wine-deep));color:var(--cream)}
+.light{background:var(--cream);color:var(--ink)}
+.light .eyebrow{color:var(--wine-2)}
+.light p.lead{color:var(--soft)}
+.wave{display:block;width:100%;height:46px;position:absolute;left:0;bottom:-1px;z-index:2}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+
+/* petals */
+#petals{position:fixed;inset:0;pointer-events:none;z-index:6;overflow:hidden}
+.petal{position:absolute;top:-30px;width:12px;height:16px;background:linear-gradient(135deg,#8c2a3e,#4b0f1f);
+  border-radius:80% 0 80% 0;opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(540deg)}}
+
+/* COVER */
+.cover{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;
+  padding:0 26px 120px;overflow:hidden;background:linear-gradient(160deg,#5a1a2b,#240810)}
+.cover .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:0;
+  animation:zoom 18s ease-out both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:
+   linear-gradient(180deg,rgba(36,8,16,.55) 0%,rgba(36,8,16,0) 22%,rgba(36,8,16,.15) 45%,rgba(36,8,16,.88) 82%,#240810 100%),
+   linear-gradient(0deg,rgba(90,26,43,.25),rgba(90,26,43,.25))}
+.cover>*:not(.bg):not(.wave){position:relative;z-index:3}
+.mono{position:absolute!important;top:22px;left:0;right:0;font-family:var(--sans);font-size:11px;letter-spacing:.5em;opacity:.9}
+.cover .names{font-family:var(--serif);font-weight:300;font-size:clamp(40px,13vw,62px);letter-spacing:.16em;text-transform:uppercase;line-height:1.1;text-shadow:0 4px 30px rgba(0,0,0,.45)}
+.cover .names em{display:block;font-family:var(--script);font-style:normal;text-transform:none;letter-spacing:0;font-size:.62em;color:var(--blush);margin:4px 0}
+.cover .invite{margin-top:20px;font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;line-height:2;opacity:.9}
+.cover .date{margin-top:18px;font-family:var(--sans);font-size:14px;letter-spacing:.4em}
+.arrow{margin-top:26px;width:42px;height:42px;border:1px solid rgba(244,237,230,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bob 2s infinite}
+.arrow svg{width:14px;height:14px;stroke:var(--cream);fill:none;stroke-width:1.5}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* NEWS */
+.news h2{font-size:26px}
+.news .big{font-family:var(--script);font-size:56px;color:var(--wine-2);margin:6px 0 14px;line-height:1.1}
+.news .when{font-family:var(--script);font-size:40px;color:var(--wine);margin-top:8px}
+.heart{width:18px;height:18px;fill:var(--rose);display:block;margin:20px auto}
+
+/* COUNTDOWN */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 34px}
+.cd div{border:1px solid rgba(217,180,180,.35);border-radius:16px;padding:16px 2px;background:rgba(255,255,255,.04)}
+.cd b{display:block;font-size:32px;font-weight:300;line-height:1}
+.cd span{font-family:var(--sans);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+
+/* CALENDAR */
+.cal{max-width:360px;margin:0 auto;border:1px solid rgba(217,180,180,.3);border-radius:24px;padding:22px 14px;background:rgba(255,255,255,.05)}
+.cal h3{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px;font-family:var(--sans);font-size:14px}
+.grid .h{font-size:10px;opacity:.55;letter-spacing:.1em;padding-bottom:6px}
+.grid .we{color:var(--blush)}
+.grid .o{opacity:.25}
+.grid .d{height:38px;display:flex;align-items:center;justify-content:center;position:relative}
+.grid .me{color:#fff;font-weight:500;z-index:1}
+.grid .me::before{content:"";position:absolute;width:46px;height:46px;z-index:-1;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b0394f' d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 5 6 5c2 0 3.4 1 4.4 2.4L12 9.3l1.6-1.9C14.6 6 16 5 18 5c3.4 0 5.1 3.4 3.6 6.8C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:beat 1.6s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.btn{display:inline-block;margin-top:28px;padding:15px 32px;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  text-decoration:none;color:var(--cream);border:1px solid rgba(244,237,230,.6);transition:background .3s}
+.btn:active{background:rgba(255,255,255,.12)}
+.light .btn{color:var(--wine);border-color:var(--wine)}
+.btn.fill{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+
+/* TIMELINE */
+.tl{position:relative;margin:38px auto 0;max-width:340px;text-align:left;padding-left:34px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--rose);opacity:.6}
+.ev{position:relative;margin-bottom:34px}
+.ev::before{content:"";position:absolute;left:-34px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--cream);border:2px solid var(--wine-2);box-shadow:0 0 0 4px rgba(185,122,132,.25)}
+.ev time{font-family:var(--script);font-size:30px;color:var(--wine-2);display:block;line-height:1}
+.ev h4{font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;margin:8px 0 6px;color:var(--ink)}
+.ev p{font-size:17px;font-style:italic;color:var(--soft);line-height:1.4}
+
+/* DAY2 */
+.day2{background:linear-gradient(180deg,var(--wine),var(--wine-deep))}
+.day2 .when{font-family:var(--script);font-size:clamp(28px,8.4vw,40px);white-space:nowrap;margin:14px 0 4px;color:var(--blush)}
+.day2 .tag{font-family:var(--sans);letter-spacing:.34em;font-size:12px;text-transform:uppercase}
+.day2 p{font-style:italic;font-size:21px;margin-top:6px;line-height:1.5;opacity:.92}
+
+/* PLACE */
+.place h3{font-family:var(--serif);font-weight:400;font-size:34px;letter-spacing:.14em;text-transform:uppercase;margin:12px 0 10px;color:var(--wine)}
+.place address{font-style:normal;font-size:21px;line-height:1.55;color:var(--soft)}
+
+/* FOOTER */
+footer{padding:80px 28px 90px;text-align:center;background:radial-gradient(120% 70% at 50% 100%,var(--wine-2),var(--wine-deep))}
+footer .mono2{font-family:var(--script);font-size:44px;color:var(--blush)}
+footer .names{font-size:22px;letter-spacing:.28em;text-transform:uppercase;margin-top:6px;font-weight:300}
+footer small{display:block;margin-top:22px;font-family:var(--sans);font-size:10px;letter-spacing:.34em;opacity:.7;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+<div class="wrap">
+
+  <!-- COVER -->
+  <header class="cover">
+    <img class="bg" src="photo.jpg" alt="Руслан и Анжелика" onerror="this.style.display='none'">
+    <div class="mono">Р · А</div>
+    <h1 class="names rv">Руслан<em>и</em>Анжелика</h1>
+    <p class="invite rv">С радостью приглашаем вас<br>на празднование нашей свадьбы</p>
+    <div class="line rv" style="margin:18px auto 0"></div>
+    <div class="date rv">28 · 11 · 2026</div>
+    <div class="arrow rv"><svg viewBox="0 0 14 14"><path d="M2 5l5 5 5-5"/></svg></div>
+    <svg class="wave" viewBox="0 0 520 46" preserveAspectRatio="none"><path fill="#f4ede6" d="M0 46V30C90 6 170 4 260 22s170 20 260-4v28z"/></svg>
+  </header>
+
+  <!-- NEWS -->
+  <section class="sec light news" style="padding-top:40px">
+    <div class="eyebrow rv">Мы спешим сообщить</div>
+    <h2 class="rv" style="color:var(--wine)">Дорогие родные<br>и друзья!</h2>
+    <p class="lead rv">Вы получили это приглашение, а значит мы спешим сообщить Вам важную новость!</p>
+    <svg class="heart rv" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 5 6 5c2 0 3.4 1 4.4 2.4L12 9.3l1.6-1.9C14.6 6 16 5 18 5c3.4 0 5.1 3.4 3.6 6.8C19.5 16.4 12 21 12 21z"/></svg>
+    <div class="big rv">Мы женимся!</div>
+    <p class="lead rv">Приглашаем Вас разделить с нами радость особенного для нас события и стать частью нашей семейной истории!</p>
+    <p class="lead rv" style="margin-top:22px">Ждём вас:</p>
+    <div class="when rv">28 ноября 2026</div>
+    <svg class="wave" viewBox="0 0 520 46" preserveAspectRatio="none"><path fill="#3d0f1c" d="M0 46V20C100 40 180 44 270 26S430 2 520 24v22z"/></svg>
+  </section>
+
+  <!-- COUNTDOWN + CALENDAR -->
+  <section class="sec dark" style="padding-top:60px">
+    <div class="eyebrow rv">Сохраните дату</div>
+    <h2 class="rv">До праздника<br>осталось</h2>
+    <div class="cd rv">
+      <div><b id="cdD">0</b><span>дней</span></div>
+      <div><b id="cdH">0</b><span>часов</span></div>
+      <div><b id="cdM">0</b><span>минут</span></div>
+      <div><b id="cdS">0</b><span>секунд</span></div>
+    </div>
+    <div class="cal rv">
+      <h3>Ноябрь 2026</h3>
+      <div class="grid" id="grid"></div>
+    </div>
+    <a class="btn rv" id="addcal" href="#">Добавить в календарь</a>
+    <svg class="wave" viewBox="0 0 520 46" preserveAspectRatio="none"><path fill="#f4ede6" d="M0 46V26C90 4 180 2 270 22s160 22 250-2v26z"/></svg>
+  </section>
+
+  <!-- PLACE -->
+  <section class="sec light place" style="padding-bottom:20px">
+    <div class="eyebrow rv">Место, где сбываются мечты</div>
+    <h3 class="rv">Семь Звезд</h3>
+    <address class="rv">По адресу:<br>с. Белая Глина, ул. Южная, 6</address>
+    <a class="btn fill rv" target="_blank" rel="noopener"
+       href="https://yandex.ru/maps/?text=%D1%81.%20%D0%91%D0%B5%D0%BB%D0%B0%D1%8F%20%D0%93%D0%BB%D0%B8%D0%BD%D0%B0%2C%20%D1%83%D0%BB.%20%D0%AE%D0%B6%D0%BD%D0%B0%D1%8F%2C%206%20%D0%A1%D0%B5%D0%BC%D1%8C%20%D0%97%D0%B2%D0%B5%D0%B7%D0%B4">Посмотреть на карте</a>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="sec light" style="padding-top:40px">
+    <div class="eyebrow rv">28 ноября · суббота</div>
+    <h2 class="rv" style="color:var(--wine)">Программа дня</h2>
+    <div class="tl">
+      <div class="ev rv"><time>15:30</time><h4>Сбор гостей, фуршет</h4><p>Собираясь на мероприятие, просим взять с собой ваши прекрасные улыбки и хорошее настроение</p></div>
+      <div class="ev rv"><time>16:00</time><h4>Церемония бракосочетания</h4><p>На всякий случай приготовьте платочки для трогательного момента</p></div>
+      <div class="ev rv"><time>16:30</time><h4>Начало банкета</h4><p>Время вкусной еды, танцев и развлечений</p></div>
+      <div class="ev rv" style="margin-bottom:0"><time>23:00</time><h4>Окончание вечера</h4><p>К сожалению, даже такой прекрасный вечер может закончиться</p></div>
+    </div>
+    <svg class="wave" viewBox="0 0 520 46" preserveAspectRatio="none"><path fill="#3d0f1c" d="M0 46V18C100 42 190 44 280 24S440 0 520 22v24z"/></svg>
+  </section>
+
+  <!-- DAY 2 (в конце) -->
+  <section class="sec dark day2" style="padding-top:56px;padding-bottom:30px">
+    <div class="eyebrow rv">Продолжение праздника</div>
+    <div class="tag rv" style="margin-top:18px">Второй день</div>
+    <div class="when rv">29.11.2026 · 12:00</div>
+  </section>
+
+  <footer style="padding-top:40px">
+    <div class="mono2 rv">Р &amp; А</div>
+    <div class="names rv">Руслан и Анжелика</div>
+    <small class="rv">28 · 11 · 2026 · Спасибо, что будете с нами</small>
+  </footer>
+</div>
+
+<script>
+// Календарь: ноябрь 2026 (1 ноября — воскресенье)
+(function(){
+  const g=document.getElementById('grid');
+  ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].forEach((n,i)=>g.insertAdjacentHTML('beforeend',`<div class="h ${i>4?'we':''}">${n}</div>`));
+  [26,27,28,29,30,31].forEach(d=>g.insertAdjacentHTML('beforeend',`<div class="d o">${d}</div>`));
+  for(let d=1;d<=30;d++){
+    const col=(6+d-1)%7, cls=['d'];
+    if(col>4)cls.push('we'); if(d===28)cls.push('me');
+    g.insertAdjacentHTML('beforeend',`<div class="${cls.join(' ')}">${d}</div>`);
+  }
+  for(let d=1;d<=6;d++)g.insertAdjacentHTML('beforeend',`<div class="d o">${d}</div>`);
+})();
+
+// Обратный отсчёт (UTC+3)
+const target=new Date("2026-11-28T15:30:00+03:00");
+function tick(){
+  let s=Math.max(0,Math.floor((target-new Date())/1000));
+  const d=Math.floor(s/86400); s%=86400;
+  const h=Math.floor(s/3600); s%=3600;
+  const m=Math.floor(s/60); s%=60;
+  cdD.textContent=d;cdH.textContent=h;cdM.textContent=m;cdS.textContent=s;
+}
+tick();setInterval(tick,1000);
+
+// Добавить в календарь (.ics)
+document.getElementById('addcal').addEventListener('click',e=>{
+  e.preventDefault();
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","BEGIN:VEVENT",
+   "DTSTART:20261128T123000Z","DTEND:20261128T200000Z",
+   "SUMMARY:Свадьба Руслана и Анжелики","LOCATION:Семь Звезд, с. Белая Глина, ул. Южная, 6",
+   "DESCRIPTION:Сбор гостей в 15:30, церемония в 16:00. Второй день — 29.11 в 12:00.",
+   "END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+  a.download='wedding.ics';a.click();
+});
+
+// Появление при прокрутке
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.08+'s';io.observe(el)});
+
+// Лепестки
+const P=document.getElementById('petals');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  for(let i=0;i<12;i++){
+    const p=document.createElement('i');p.className='petal';
+    p.style.left=Math.random()*100+'vw';
+    p.style.setProperty('--dx',(Math.random()*120-60)+'px');
+    p.style.animationDuration=(11+Math.random()*10)+'s';
+    p.style.animationDelay=(-Math.random()*20)+'s';
+    p.style.transform=`scale(${.6+Math.random()*.8})`;
+    P.appendChild(p);
+  }
+}
+</script>
+</body>
+</html>
